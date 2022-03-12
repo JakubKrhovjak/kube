@@ -22,8 +22,6 @@ spec:
           name: app-a
           imagePullPolicy: Never
           resources: {}
-          ports:
-            - containerPort: 8081
 status: {}
 
 ---
@@ -39,7 +37,7 @@ spec:
     - name: app-a
       port: 8081
       protocol: TCP
-      targetPort: 8081
+      targetPort: 8080
   selector:
     app: first
   type: ClusterIP

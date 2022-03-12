@@ -17,6 +17,7 @@
 
     <modules>
         <module>app-a</module>
+        <module>app-b</module>
     </modules>
 
     <properties>
