@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: first
+  name: first
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: first
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: first
+    spec:
+      containers:
+        - image: app-a
+          name: app-a
+          imagePullPolicy: Never
+          resources: {}
+          ports:
+            - containerPort: 8081
+status: {}
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: first
+  name: first
+spec:
+  ports:
+    - name: app-a
+      port: 8081
+      protocol: TCP
+      targetPort: 8081
+  selector:
+    app: first
+  type: ClusterIP
+status:
+  loadBalancer: {}
