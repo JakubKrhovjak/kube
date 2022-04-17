@@ -18,12 +18,12 @@ spec:
         app: app-a
     spec:
       containers:
-        - image: app-a
+        - image: app-a:8081
           name: app-a
           imagePullPolicy: Never
           resources: {}
           ports:
-            - containerPort: 8181
+            - containerPort: 8081
 status: {}
 
 ---
@@ -36,10 +36,12 @@ metadata:
 spec:
   selector:
     app: app-a
-  type: ClusterIP
+#  type: LoadBalancer
   ports:
-    - port: 8081
-      targetPort: 8181
+    - name: aap-a
+      port: 8081
+      targetPort: 8081
       protocol: TCP
+
 
 
