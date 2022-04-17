@@ -2,20 +2,20 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   creationTimestamp: null
-  name: app-a
+  name: first
   labels:
-    app: app-a
+    app: first
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: app-a
+      app: first
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: app-a
+        app: first
     spec:
       containers:
         - image: app-a
@@ -30,16 +30,18 @@ status: {}
 apiVersion: v1
 kind: Service
 metadata:
-  name: app-a
+  creationTimestamp: null
   labels:
-    app:  app-a
+    app: first
+  name: first
 spec:
-  selector:
-    app: app-a
-  type: ClusterIP
   ports:
-    - port: 8081
-      targetPort: 8181
+    - name: app-a
+      port: 8081
       protocol: TCP
-
-
+      targetPort: 8080
+  selector:
+    app: first
+  type: ClusterIP
+status:
+  loadBalancer: {}
