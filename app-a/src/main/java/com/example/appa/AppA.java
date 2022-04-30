@@ -14,7 +14,7 @@ public class AppA {
 		SpringApplication.run(AppA.class, args);
 	}
 
-	@GetMapping("/")
+	@GetMapping("/appa")
 	public String message() {
 		return  "Hello App A works!";
 	}
