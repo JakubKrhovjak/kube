@@ -8,19 +8,24 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>app-b</artifactId>
+    <artifactId>gateway</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>app-b</name>
+    <name>gateway</name>
 
-    <dependencies>
+      <dependencies>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-gateway</artifactId>
         </dependency>
-    </dependencies>
+          <dependency>
+              <groupId>org.springframework.boot</groupId>
+              <artifactId>spring-boot-test</artifactId>
+              <scope>test</scope>
+          </dependency>
+
+      </dependencies>
 
     <build>
-        <finalName>appB</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
