@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  postgresql:
+    container_name: postgres
+    image: 'bitnami/postgresql:latest'
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRESQL_USERNAME=user
+      - POSTGRESQL_PASSWORD=user
+      - POSTGRESQL_DATABASE=postgres
