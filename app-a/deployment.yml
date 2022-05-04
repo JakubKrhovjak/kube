@@ -18,9 +18,9 @@ spec:
         app: app-a
     spec:
       containers:
-        - image: app-a:8081
+        - image: localhost:32000/appa:v3
           name: app-a
-          imagePullPolicy: Never
+#          imagePullPolicy: Never
           resources: {}
           ports:
             - containerPort: 8081
