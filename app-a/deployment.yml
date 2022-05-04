@@ -1,7 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
   name: app-a
   labels:
     app: app-a
@@ -13,17 +12,23 @@ spec:
   strategy: {}
   template:
     metadata:
-      creationTimestamp: null
       labels:
         app: app-a
     spec:
       containers:
-        - image: localhost:32000/appa:v3
+        - image: localhost:32000/appa:v1
           name: app-a
 #          imagePullPolicy: Never
           resources: {}
           ports:
             - containerPort: 8081
+          env:
+           - name: APPB-URL
+             value: http://app-b:8082
+#           - name: SPRING_DATASOURCE_USERNAME
+#             value: user
+#           - name: SPRING_DATASOURCE_URL
+#             value: jdbc:postgresql://db:5432/postgres
 status: {}
 
 ---
@@ -42,6 +47,4 @@ spec:
       port: 8081
       targetPort: 8081
       protocol: TCP
-
-
 
