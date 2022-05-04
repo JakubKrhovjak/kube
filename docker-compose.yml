@@ -10,3 +10,14 @@ services:
       - POSTGRESQL_USERNAME=user
       - POSTGRESQL_PASSWORD=user
       - POSTGRESQL_DATABASE=postgres
+  kasandra:
+    container_name: cassandra
+    image: cassandra:4.0.3
+    ports:
+      - 9042:9042
+    volumes:
+      - ~/cassandra:/var/lib/cassandra
+    environment:
+      - CASSANDRA_CLUSTER_NAME=citizi
+
+
