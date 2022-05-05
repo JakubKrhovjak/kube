@@ -38,7 +38,6 @@ metadata:
     app: db
 spec:
   selector:
-    name: db
     app: db
   ports:
     - name: db

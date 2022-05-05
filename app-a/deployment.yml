@@ -16,19 +16,19 @@ spec:
         app: app-a
     spec:
       containers:
-        - image: localhost:32000/appa:v1
+        - image: localhost:32000/appa:v5
           name: app-a
 #          imagePullPolicy: Never
           resources: {}
           ports:
             - containerPort: 8081
           env:
-           - name: APPB-URL
-             value: http://app-b:8082
-#           - name: SPRING_DATASOURCE_USERNAME
-#             value: user
-#           - name: SPRING_DATASOURCE_URL
-#             value: jdbc:postgresql://db:5432/postgres
+           - name: SPRING_DATASOURCE_USERNAME
+             value: user
+           - name: SPRING_DATASOURCE_PASSWORD
+             value: user
+           - name: SPRING_DATASOURCE_URL
+             value: jdbc:postgresql://db:5432/postgres
 status: {}
 
 ---

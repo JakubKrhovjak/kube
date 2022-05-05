@@ -1,0 +1,20 @@
+server:
+  port: 8081
+
+spring:
+  jpa:
+    open-in-view: false
+  datasource:
+    password: user
+    username: user
+    url: jdbc:postgresql://localhost:5432/postgres
+
+  flyway:
+    placeholder-replacement: false
+    baseline-on-migrate: true
+    validate-on-migrate: true
+    locations: classpath:db
+    user: user
+    password: user
+    schemas: public
+
