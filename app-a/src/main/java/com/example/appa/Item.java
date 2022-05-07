@@ -2,7 +2,7 @@ package com.example.appa;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import jdk.jfr.Enabled;
+
 import lombok.Data;
 import lombok.experimental.Accessors;
 

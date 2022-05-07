@@ -1,0 +1,12 @@
+deployment:
+  port: 8081
+  image: localhost:32000/appa:v5
+name: "app-a"
+data:
+  SPRING_DATASOURCE_USERNAME : user
+  SPRING_DATASOURCE_PASSWORD: user
+  SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/postgres
+
+
+  
+  

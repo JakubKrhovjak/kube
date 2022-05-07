@@ -1,0 +1,9 @@
+deployment:
+  name: "db"
+  port: 5432
+  image: bitnami/postgresql:latest
+data:
+   POSTGRESQL_USERNAME: user
+   POSTGRESQL_PASSWORD: user
+   POSTGRESQL_DATABASE: postgress
+  

@@ -1,13 +1,12 @@
 package com.example.appa;
 
 import javax.annotation.PostConstruct;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
 
 
 @RestController
@@ -18,9 +17,7 @@ public class AppA {
 		SpringApplication.run(AppA.class, args);
 	}
 
-//
-//	@Value("${appb-url}")
-//    private String appbUrl;
+
 
 	@PostConstruct
 	public void init() {
@@ -35,9 +32,6 @@ public class AppA {
 
 	@GetMapping("/appa")
 	public String message() {
-//		RestTemplate restTemplate = new RestTemplate();
-//		var b = restTemplate.getForObject(appbUrl + "/appb", String.class);
-
 		return  "Hello App A works! with value: " + repository.findById(1L).get().getName();
 	}
 
