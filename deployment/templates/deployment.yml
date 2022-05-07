@@ -16,7 +16,7 @@ spec:
         app: {{.Values.name}}
     spec:
       containers:
-        - image: localhost:32000/appa:v5
+        - image: {{.Values.deployment.image}}:{{.Values.deployment.tag}}
           name: {{.Values.name}}
 #          imagePullPolicy: Never
           resources: {}
