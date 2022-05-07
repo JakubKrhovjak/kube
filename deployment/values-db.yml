@@ -3,8 +3,9 @@ deployment:
   port: 5432
   image: bitnami/postgresql
   tag: latest
-data:
+config:
    POSTGRESQL_USERNAME: user
-   POSTGRESQL_PASSWORD: user
    POSTGRESQL_DATABASE: postgress
+secret:
+  POSTGRESQL_PASSWORD: udXNlcg==
   

@@ -25,6 +25,10 @@ spec:
           envFrom:
             - configMapRef:
                 name: {{.Values.name}}-config
+            - secretRef:
+                name: {{.Values.name}}-secret
+
+          
 status: {}
 
 

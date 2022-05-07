@@ -3,10 +3,11 @@ deployment:
   port: 8081
   image: localhost:32000/appa
   tag: v5
-data:
+config:
   SPRING_DATASOURCE_USERNAME : user
-  SPRING_DATASOURCE_PASSWORD: user
   SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/postgres
+secret:
+  SPRING_DATASOURCE_PASSWORD: dXNlcg==
 
 
   
