@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: StatefullSet
+metadata:
+  name: {{.Values.name}}
+  labels:
+    app: {{.Values.name}}
+spec:
+  serviceName: {{.Values.name}}
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{.Values.name}}
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: {{.Values.name}}
+    spec:
+      containers:
+        - image: {{.Values.deployment.image}}:{{.Values.deployment.tag}}
+          name: {{.Values.name}}
+#          imagePullPolicy: Never
+          resources: {}
+          ports:
+            - containerPort: {{.Values.deployment.port}}
+          envFrom:
+            - configMapRef:
+                name: {{.Values.name}}-config
+            - secretRef:
+                name: {{.Values.name}}-secret
+          volumeMounts:
+            - name: data
+              mounthPath: /var/lib/postgresql/data
+      volumens:
+        - name: data
+          persistentVolumeClaim:
+          claimName: {{.Values.name}}-claim   
+
+        
+
+          
+status: {}
+
+
+
