@@ -13,3 +13,4 @@ spec:
       port: {{.Values.deployment.port}}
       targetPort: {{.Values.deployment.port}}
       protocol: TCP
+  # clusterIP: None
