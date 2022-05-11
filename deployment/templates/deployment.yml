@@ -1,3 +1,4 @@
+{{if ne .Values.name "db"}}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -27,9 +28,9 @@ spec:
                 name: {{.Values.name}}-config
             - secretRef:
                 name: {{.Values.name}}-secret
-
-          
 status: {}
+
+{{end}}
 
 
 
