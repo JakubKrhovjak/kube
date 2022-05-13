@@ -10,7 +10,7 @@ spec:
   capacity:
     storage: 1Gi 
   hostPath:
-    /home/lucky/data
+    path: /home/lucky/data
 {{end}}
     
      
