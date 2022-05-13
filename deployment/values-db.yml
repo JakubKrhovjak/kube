@@ -7,5 +7,5 @@ config:
    POSTGRESQL_USERNAME: user
    POSTGRESQL_DATABASE: postgress
 secret:
-  POSTGRESQL_PASSWORD: udXNlcg==
+  POSTGRESQL_PASSWORD: dXNlcg==
   
