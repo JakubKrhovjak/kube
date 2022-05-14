@@ -4,6 +4,7 @@ kind: PersistentVolumeClaim
 metadata:
    name: {{.Values.name}}-claim
 spec:
+  storageClassName: hostpath
   accessModes:
     - ReadWriteOnce 
   resources:
